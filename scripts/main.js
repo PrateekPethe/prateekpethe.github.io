@@ -19,13 +19,6 @@ themeToggle.addEventListener('change', () => {
 const savedTheme = localStorage.getItem('theme') === 'dark';
 themeToggle.checked = savedTheme;
 setTheme(savedTheme);
-// Set initial theme
-const savedTheme = localStorage.getItem('theme') || 'light';
-if(savedTheme === 'dark') {
-    themeToggle.checked = true;
-    themeStyle.removeAttribute('disabled');
-    document.documentElement.classList.add('dark-mode');
-}
 
 // Initialize Animate On Scroll
 AOS.init({
