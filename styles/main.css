@@ -311,16 +311,30 @@ input:focus, textarea:focus {
 }
 
 @media (max-width: 768px) {
+    #contact {
+        padding-bottom: 5rem !important;
+    }
     .container {
         padding: 1rem;
     }
     
+    
     .floating-nav {
-        bottom: 1rem;
+        bottom: 2rem;
         top: auto;
         right: 50%;
         transform: translateX(50%);
         flex-direction: row;
+        padding: 0.8rem;
+    }
+    
+    .nav-item {
+        width: 40px;
+        height: 40px;
+    }
+
+    .glow-button {
+        margin-bottom: 2rem;
     }
     
     .hero {
