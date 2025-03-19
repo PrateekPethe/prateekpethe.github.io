@@ -5,6 +5,54 @@
     --accent-color: #ff6b35;
     --text-color: #333;
 }
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--accent-color);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(180deg) scale(1.1);
+}
+
+.toggle-icon {
+    font-size: 28px;
+    transition: transform 0.3s ease;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] {
+    --primary-color: #1a1a1a;
+    --secondary-color: #4a9dff;
+    --accent-color: #ff9f43;
+    --text-color: #ffffff;
+    background-color: #121212;
+}
+
+[data-theme="dark"] .project-category {
+    background: #2a2a2a;
+}
+
+[data-theme="dark"] .skill-item {
+    background: #2a2a2a;
+    color: white;
+}
+
+[data-theme="dark"] section {
+    border-bottom-color: #2a2a2a;
+}
 
 * {
     margin: 0;
