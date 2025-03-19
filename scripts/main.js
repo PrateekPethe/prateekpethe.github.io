@@ -55,3 +55,15 @@ document.querySelector('.contact-form').addEventListener('submit', (e) => {
         console.error(error);
     });
 });
+
+const formElements = document.querySelectorAll('input, textarea');
+
+formElements.forEach(element => {
+    element.addEventListener('focus', () => {
+        document.querySelector('.floating-nav').style.display = 'none';
+    });
+    
+    element.addEventListener('blur', () => {
+        document.querySelector('.floating-nav').style.display = 'flex';
+    });
+});
