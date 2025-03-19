@@ -22,7 +22,7 @@ class ParticleSystem {
 
     createParticles() {
         const primaryColor = getComputedStyle(document.documentElement)
-            .getPropertyValue('--primary').trim();
+            .getPropertyValue('--particle-color').trim();
         
         this.particles = [];
         
