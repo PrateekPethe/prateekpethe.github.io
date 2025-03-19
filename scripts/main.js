@@ -21,11 +21,11 @@ if(savedTheme === 'dark') {
     document.documentElement.classList.add('dark-mode');
 }
 
-// Initialize AOS
+// Initialize Animate On Scroll
 AOS.init({
-    duration: 1000,
-    once: false,
-    mirror: true
+    duration: 800,
+    once: true,
+    mirror: false
 });
 
 // Smooth Scroll
