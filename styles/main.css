@@ -232,8 +232,9 @@ input:checked + .slider:before {
 
 /* Contact Form */
 .contact-form {
-    max-width: 600px;
-    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    padding: 4rem 0 6rem;
 }
 
 .form-group {
@@ -267,6 +268,8 @@ input:focus, textarea:focus {
     cursor: pointer;
     transition: var(--transition);
     width: 100%;
+    position: relative;
+    z-index: 100;
 }
 
 .glow-button:hover {
@@ -311,29 +314,29 @@ input:focus, textarea:focus {
 }
 
 @media (max-width: 768px) {
-    #contact {
-        padding-bottom: 5rem !important;
-    }
-    .container {
-        padding: 1rem;
-    }
-    
-    
     .floating-nav {
-        bottom: 2rem;
-        top: auto;
-        right: 50%;
-        transform: translateX(50%);
-        flex-direction: row;
-        padding: 0.8rem;
-    }
-    
-    .nav-item {
-        width: 40px;
-        height: 40px;
+        bottom: 1rem;
+        right: 1rem;
+        transform: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        background: var(--primary);
     }
 
-    .glow-button {
+    .nav-item {
+        width: 35px;
+        height: 35px;
+        background: rgba(255,255,255,0.1) !important;
+        color: white !important;
+    }
+
+    #contact {
+        padding-bottom: 100px !important;
+    }
+
+    /* Ensure form elements are visible */
+    .contact-form {
         margin-bottom: 2rem;
     }
     
