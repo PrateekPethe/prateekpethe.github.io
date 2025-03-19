@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prateek Pethe | Interactive Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel="stylesheet" href="styles/dark-mode.css" id="theme-style" disabled />
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <div class="theme-switch-wrapper">
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="slider round"></span>
+        </label>
+        <span class="theme-icon">🌙☀️</span>
+    </div>
+
+    <!-- Particle Canvas -->
+    <div id="particles-js"></div>
+
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <div class="nav-item" data-section="hero"><i class="fas fa-user"></i></div>
+        <div class="nav-item" data-section="experience"><i class="fas fa-briefcase"></i></div>
+        <div class="nav-item" data-section="projects"><i class="fas fa-code"></i></div>
+        <div class="nav-item" data-section="education"><i class="fas fa-graduation-cap"></i></div>
+        <div class="nav-item" data-section="contact"><i class="fas fa-envelope"></i></div>
+    </nav>
+
+    <!-- Sections -->
+    <section class="hero container" id="hero">
+        <div class="profile-card" data-aos="zoom-in">
+            <img src="assets/images/profile.jpg" alt="Prateek Pethe" class="avatar" />
+            <h1>Prateek Nikhil Pethe</h1>
+            <p class="tagline">Market Research Analyst</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/pnpethe" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:prtko62510@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="Prateek_Nikhil_Pethe_Resume_2025(2).pdf" download class="download-btn">
+                    <i class="fas fa-file-pdf"></i> Download Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience container" id="experience">
+        <h2 data-aos="fade-right">Professional Experience</h2>
+        <div class="timeline">
+            <div class="project-card" data-aos="fade-up">
+                <h3>Analyst - Evalueserve</h3>
+                <p class="date">March 2022 - Present</p>
+                <ul>
+                    <li>Conducted competitive landscape analysis</li>
+                    <li>Developed Power BI dashboards</li>
+                    <li>Performed market entry analysis</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects container" id="projects">
+        <h2 data-aos="fade-left">Key Projects</h2>
+        <div class="project-grid">
+            <div class="project-card" data-aos="flip-up">
+                <h3>Competitor Intelligence</h3>
+                <ul>
+                    <li>Analyzed industry players</li>
+                    <li>Developed intelligence profiles</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="education container" id="education">
+        <h2 data-aos="fade-up">Education</h2>
+        <div class="education-grid">
+            <div class="education-card" data-aos="zoom-in">
+                <h3>MBA in Business Analytics</h3>
+                <p>Balaji Institute of Management</p>
+                <p class="grade">72%</p>
+                <p class="duration">2022</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact container" id="contact">
+        <h2 data-aos="fade-up">Get in Touch</h2>
+        <form class="contact-form" netlify>
+            <div class="form-group" data-aos="fade-right">
+                <input type="text" placeholder="Name" required />
+            </div>
+            <div class="form-group" data-aos="fade-left">
+                <input type="email" placeholder="Email" required />
+            </div>
+            <div class="form-group" data-aos="fade-up">
+                <textarea placeholder="Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="glow-button" data-aos="zoom-in">Send Message 🚀</button>
+        </form>
+    </section>
+
+    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts/particles.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
