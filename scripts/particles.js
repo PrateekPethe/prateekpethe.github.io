@@ -1,8 +1,10 @@
+// Replace the entire file with:
 class ParticleSystem {
     constructor() {
         this.canvas = document.querySelector('.particles');
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
+        this.animationFrameId = null;
         this.init();
     }
 
@@ -43,6 +45,7 @@ class ParticleSystem {
             particle.x += particle.speedX;
             particle.y += particle.speedY;
 
+            // Boundary checks
             if(particle.x > this.canvas.width) particle.x = 0;
             if(particle.x < 0) particle.x = this.canvas.width;
             if(particle.y > this.canvas.height) particle.y = 0;
@@ -55,9 +58,19 @@ class ParticleSystem {
             this.ctx.fill();
         });
 
-        requestAnimationFrame(this.animate.bind(this));
+        this.animationFrameId = requestAnimationFrame(this.animate.bind(this));
+    }
+
+    destroy() {
+        cancelAnimationFrame(this.animationFrameId);
     }
 }
 
-// Initialize when page loads
-window.addEventListener('load', () => new ParticleSystem());
+// Initialize particle system
+let particleSystem = new ParticleSystem();
+
+// Add this function
+function refreshParticles() {
+    particleSystem.destroy();
+    particleSystem = new ParticleSystem();
+}
