@@ -58,4 +58,6 @@ class ParticleSystem {
 }
 
 // Initialize particle system
-new ParticleSystem();
+window.addEventListener('DOMContentLoaded', () => {
+    new ParticleSystem();
+});
