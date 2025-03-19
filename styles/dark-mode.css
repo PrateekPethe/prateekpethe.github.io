@@ -1,0 +1,6 @@
+:root {
+  --text: #ffffff;
+  --bg: #1a1a1a;
+  --card-bg: rgba(30, 30, 30, 0.9);
+}
+body { background: var(--bg); color: var(--text); }
