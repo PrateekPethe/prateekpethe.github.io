@@ -19,8 +19,11 @@ class ParticleSystem {
     }
 
     createParticles() {
-        const colors = getComputedStyle(document.documentElement)
+        const primaryColor = getComputedStyle(document.documentElement)
             .getPropertyValue('--primary').trim();
+        
+        // Clear existing particles
+        this.particles = [];
         
         for(let i = 0; i < 100; i++) {
             this.particles.push({
@@ -29,7 +32,7 @@ class ParticleSystem {
                 size: Math.random() * 3 + 1,
                 speedX: (Math.random() - 0.5) * 0.5,
                 speedY: (Math.random() - 0.5) * 0.5,
-                color: colors
+                color: primaryColor
             });
         }
     }
