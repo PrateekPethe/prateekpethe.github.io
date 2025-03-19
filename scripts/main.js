@@ -37,6 +37,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Update setTheme function
+function setTheme(isDark) {
+    document.documentElement.classList.toggle('dark-mode', isDark);
+    themeStyle.disabled = !isDark;
+    
+    // Refresh particles
+    const particleSystem = new ParticleSystem();
+    particleSystem.createParticles();
+}
+
 // Hover Effects
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
