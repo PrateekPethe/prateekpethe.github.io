@@ -12,12 +12,11 @@
 <body>
     <!-- Theme Toggle -->
     <div class="theme-switch-wrapper">
-        <span class="theme-switch-label">🌙</span>
         <label class="theme-switch">
             <input type="checkbox" id="theme-toggle">
             <span class="slider round"></span>
         </label>
-        <span class="theme-switch-label">☀️</span>
+        <span class="theme-icon">🌙☀️</span>
     </div>
 
     <!-- Particle Canvas -->
@@ -25,31 +24,34 @@
 
     <!-- Floating Navigation -->
     <nav class="floating-nav">
-        <div class="nav-item" data-section="home"><i class="fas fa-home"></i></div>
+        <div class="nav-item" data-section="hero"><i class="fas fa-user"></i></div>
         <div class="nav-item" data-section="experience"><i class="fas fa-briefcase"></i></div>
         <div class="nav-item" data-section="projects"><i class="fas fa-code"></i></div>
+        <div class="nav-item" data-section="education"><i class="fas fa-graduation-cap"></i></div>
         <div class="nav-item" data-section="contact"><i class="fas fa-envelope"></i></div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
-        <div class="profile-card">
-        <img src="assets/images/profile.jpg" alt="Prateek Pethe" class="avatar">
-        <h1>Prateek Nikhil Pethe</h1>
-        <p class="tagline">Market Research Analyst</p>
+    <section class="hero container" id="hero">
+        <div class="profile-card" data-aos="zoom-in">
+            <img src="assets/images/profile.jpg" alt="Prateek Pethe" class="avatar">
+            <h1>Prateek Nikhil Pethe</h1>
+            <p class="tagline">Market Research Analyst</p>
             <div class="social-links">
-                <a href="in/pnpethe" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://linkedin.com/in/pnpethe" target="_blank"><i class="fab fa-linkedin"></i></a>
                 <a href="mailto:prtko62510@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="Prateek_Nikhil_Pethe_Resume_2025(2).pdf" download><i class="fas fa-file-pdf"></i></a>
+                <a href="Prateek_Nikhil_Pethe_Resume_2025(2).pdf" download class="download-btn">
+                    <i class="fas fa-file-pdf"></i> Download Resume
+                </a>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- Experience Section -->
-    <section class="section container" id="experience">
+    <section class="experience container" id="experience">
         <h2 data-aos="fade-right">Professional Experience</h2>
         <div class="timeline">
-            <div class="project-card" data-aos="zoom-in">
+            <div class="project-card" data-aos="fade-up">
                 <h3>Analyst - Evalueserve</h3>
                 <p class="date">March 2022 - Present</p>
                 <ul>
@@ -57,19 +59,19 @@
                     <li>Developed Power BI dashboards for client presentations</li>
                     <li>Performed market entry analysis for APAC/Japan</li>
                 </ul>
-            <div class="skill-bar">
+                <div class="skill-bar">
                     <div class="skill-progress" style="width: 85%"></div>
-             </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="section container" id="projects">
+    <section class="projects container" id="projects">
         <h2 data-aos="fade-left">Key Projects</h2>
         <div class="project-grid">
             <div class="project-card" data-aos="flip-up">
-                <h3>Competitor Intelligence & Market Insights</h3>
+                <h3>Competitor Intelligence</h3>
                 <ul>
                     <li>Analyzed graphics design industry players</li>
                     <li>Developed cybersecurity intelligence profiles</li>
@@ -98,37 +100,39 @@
         </div>
     </section>
 
-   <section class="section container" id="education">
-    <h2 data-aos="fade-up">Education</h2>
-    <div class="education-section">
-        <div class="education-item">
-            <h3>Masters in Business Administration</h3>
-            <p>Minor in Business Analytics</p>
-            <p>Balaji Institute of Management and HRD, Pune · 2022 · 72.0%</p>
+    <!-- Education Section -->
+    <section class="education container" id="education">
+        <h2 data-aos="fade-up">Education</h2>
+        <div class="education-grid">
+            <div class="education-card" data-aos="zoom-in">
+                <h3>MBA in Business Analytics</h3>
+                <p>Balaji Institute of Management</p>
+                <p class="grade">72%</p>
+                <p class="duration">2022</p>
+            </div>
+            <div class="education-card" data-aos="zoom-in">
+                <h3>B.Tech in Computer Science</h3>
+                <p>Sikkim Manipal Institute</p>
+                <p class="grade">6.71 GPA</p>
+                <p class="duration">2016-2020</p>
+            </div>
         </div>
-        <div class="education-item">
-            <h3>Bachelor of Technology</h3>
-            <p>Minor in Computer Science</p>
-            <p>Sikkim Manipal Institute of Technology · 2020 · 6.71 GPA</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-    
-    <!-- Contact Form -->
-    <section class="section container" id="contact">
+    <!-- Contact Section -->
+    <section class="contact container" id="contact">
         <h2 data-aos="fade-up">Get in Touch</h2>
         <form class="contact-form" netlify>
-            <div class="form-group">
+            <div class="form-group" data-aos="fade-right">
                 <input type="text" placeholder="Name" required>
             </div>
-            <div class="form-group">
+            <div class="form-group" data-aos="fade-left">
                 <input type="email" placeholder="Email" required>
             </div>
-            <div class="form-group">
+            <div class="form-group" data-aos="fade-up">
                 <textarea placeholder="Message" rows="5" required></textarea>
             </div>
-            <button type="submit" class="glow-button">Send Message 🚀</button>
+            <button type="submit" class="glow-button" data-aos="zoom-in">Send Message 🚀</button>
         </form>
     </section>
 
