@@ -1,6 +1,7 @@
 :root {
-    --primary: #6C63FF;
-    --secondary: #FF6584;
+    --primary: #FF6584; 
+    --secondary: #6C63FF;
+    --particle-color: var(--primary);
     --accent: #2EC4B6;
     --text: #2d3436;
     --bg: #ffffff;
@@ -33,11 +34,15 @@ body {
 .theme-switch-wrapper {
     position: fixed;
     top: 20px;
-    right: 20px;
+    display: flex;
+    gap: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 1000;
     display: flex;
     align-items: center;
     gap: 10px;
+}
 }
 
 .theme-switch {
