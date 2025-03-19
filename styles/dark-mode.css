@@ -16,6 +16,11 @@
     background: rgba(255,255,255,0.1);
 }
 
+.education-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
 /* Form elements in dark mode */
 .contact-form input,
 .contact-form textarea {
