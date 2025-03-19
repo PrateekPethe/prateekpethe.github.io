@@ -1,38 +1,28 @@
-/* ========== Dark theme overrides ========== */
 :root {
-    --text: #FFFFFF;
-    --bg: #1A1A1A;
+    --text: #ffffff;
+    --bg: #1a1a1a;
     --card-bg: rgba(30, 30, 30, 0.9);
     --shadow: 0 8px 32px rgba(0,0,0,0.3);
-    --glass: rgba(0,0,0,0.1);
+    --glass: rgba(255,255,255,0.05);
 }
 
-/* Dark mode specific component styles */
-.project-card {
-    border: 1px solid rgba(255,255,255,0.1);
-}
-
-.skill-tag {
-    background: rgba(255,255,255,0.1);
-}
-
-.education-item {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
+body {
+    background: #121212;
 }
 
 .nav-item {
-    color: white !important;
     background: rgba(255,255,255,0.1) !important;
+}
+
+input, textarea {
+    background: rgba(255,255,255,0.1) !important;
+    color: white !important;
 }
 
 ::placeholder {
     color: rgba(255,255,255,0.7) !important;
 }
 
-/* Form elements in dark mode */
-.contact-form input,
-.contact-form textarea {
-    background: rgba(255,255,255,0.1);
-    color: white;
+.education-card, .project-card {
+    border: 1px solid rgba(255,255,255,0.1);
 }
