@@ -115,8 +115,24 @@ body {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .container {
-        padding: 1rem;
+    .hero {
+        padding: 3rem 0;
+    }
+    
+    .profile-card {
+        padding: 1.5rem;
+    }
+    
+    .floating-nav {
+        bottom: 1rem;
+        top: auto;
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+    }
+    
+    .nav-item {
+        margin: 0 0.5rem;
     }
 }
 /* Education Section */
