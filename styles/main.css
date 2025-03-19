@@ -106,22 +106,14 @@ input:checked + .slider:before {
 }
 
 .profile-card {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: var(--shadow);
-    backdrop-filter: blur(10px);
-    max-width: 600px;
-    margin: 0 auto;
+    position: relative; /* Ensure proper stacking */
+    z-index: 2; /* Above particles */
 }
 
 .avatar {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin: 0 auto 1.5rem;
-    border: 4px solid var(--primary);
-    object-fit: cover;
+    width: 180px; /* Controlled size */
+    height: 180px;
+    object-fit: cover; /* Better image crop */
 }
 
 .tagline {
@@ -149,16 +141,16 @@ input:checked + .slider:before {
 }
 
 .download-btn {
+    padding: 0.6rem 1.2rem; /* Reduce padding */
+    font-size: 0.9rem; /* Smaller text */
+    margin-top: 1rem;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.8rem 1.5rem;
-    background: var(--primary);
-    color: white;
-    border-radius: 50px;
-    text-decoration: none;
-    margin-top: 1.5rem;
-    transition: var(--transition);
+}
+
+.download-btn i {
+    font-size: 1rem; /* Adjust icon size */
 }
 
 .download-btn:hover {
@@ -238,6 +230,9 @@ input:focus, textarea:focus {
 
 .glow-button {
     background: linear-gradient(45deg, var(--primary), var(--secondary));
+    opacity: 1 !important; /* Override AOS opacity */
+    position: relative;
+    z-index: 10;
     color: white;
     padding: 1rem 2rem;
     border: none;
