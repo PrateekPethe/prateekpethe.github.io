@@ -1,6 +1,6 @@
 :root {
-    --primary: #FF6584; 
-    --secondary: #6C63FF;
+    --primary: #6C63FF; 
+    --secondary: #FF6584;
     --particle-color: var(--primary);
     --accent: #2EC4B6;
     --text: #2d3436;
