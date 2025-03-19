@@ -10,10 +10,8 @@ function setTheme(isDark) {
 
 themeToggle.addEventListener('change', () => {
     setTheme(themeToggle.checked);
-    // Refresh particle colors
-    const particles = document.querySelector('.particles');
-    particles.style.display = 'none';
-    setTimeout(() => particles.style.display = 'block', 10);
+    localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
+    refreshParticles(); // Add this line
 });
 
 // Initialize theme
@@ -40,6 +38,20 @@ document.querySelectorAll('.nav-item').forEach(item => {
 // Form Submission
 document.querySelector('.contact-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    e.target.reset();
-    alert('Message sent successfully! 🎉');
+    
+    const formData = new FormData(e.target);
+    
+    fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+    })
+    .then(() => {
+        alert('Message sent successfully! 🎉');
+        e.target.reset();
+    })
+    .catch(error => {
+        alert('Error sending message. Please try again.');
+        console.error(error);
+    });
 });
