@@ -8,7 +8,7 @@ class ParticleSystem {
 
     init() {
         this.resize();
-        window.addEventListener('resize', () => this.resize());
+        window.addEventListener('resize', this.resize.bind(this));
         this.createParticles();
         this.animate();
     }
@@ -22,14 +22,13 @@ class ParticleSystem {
         const primaryColor = getComputedStyle(document.documentElement)
             .getPropertyValue('--primary').trim();
         
-        // Clear existing particles
         this.particles = [];
         
         for(let i = 0; i < 100; i++) {
             this.particles.push({
                 x: Math.random() * this.canvas.width,
                 y: Math.random() * this.canvas.height,
-                size: Math.random() * 3 + 1,
+                size: Math.random() * 2 + 1,
                 speedX: (Math.random() - 0.5) * 0.5,
                 speedY: (Math.random() - 0.5) * 0.5,
                 color: primaryColor
@@ -52,15 +51,13 @@ class ParticleSystem {
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
             this.ctx.fillStyle = particle.color;
-            this.ctx.globalAlpha = particle.size/4;
+            this.ctx.globalAlpha = particle.size/5;
             this.ctx.fill();
         });
 
-        requestAnimationFrame(() => this.animate());
+        requestAnimationFrame(this.animate.bind(this));
     }
 }
 
-// Initialize particle system
-window.addEventListener('DOMContentLoaded', () => {
-    new ParticleSystem();
-});
+// Initialize when page loads
+window.addEventListener('load', () => new ParticleSystem());
