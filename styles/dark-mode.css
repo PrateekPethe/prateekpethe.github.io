@@ -1,6 +1,7 @@
 :root {
     --text: #ffffff;
     --bg: #1a1a1a;
+    --particle-color: #6C63FF;
     --card-bg: rgba(30, 30, 30, 0.9);
     --shadow: 0 8px 32px rgba(0,0,0,0.3);
     --glass: rgba(255,255,255,0.05);
