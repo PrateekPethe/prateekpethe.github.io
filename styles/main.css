@@ -19,7 +19,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    line-height: 1.75;
     color: var(--text);
     background: var(--bg);
 }
@@ -85,7 +85,7 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-    transform: translateX(26px); /* Was correct but ensure this value */
+    transform: translateX(34px); /* Was correct but ensure this value */
     background-color: white;
 }
 
