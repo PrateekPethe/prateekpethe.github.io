@@ -1,18 +1,24 @@
-// Theme Toggle
 const themeToggle = document.getElementById('theme-toggle');
 const themeStyle = document.getElementById('theme-style');
 
+function setTheme(isDark) {
+    document.documentElement.classList.toggle('dark-mode', isDark);
+    themeStyle.disabled = !isDark;
+    // Update particle colors
+    const particles = document.querySelector('.particles');
+    if(particles) particles.style.display = 'none';
+    setTimeout(() => particles.style.display = 'block', 10);
+}
+
 themeToggle.addEventListener('change', () => {
-    if(themeToggle.checked) {
-        themeStyle.removeAttribute('disabled');
-        document.documentElement.classList.add('dark-mode');
-    } else {
-        themeStyle.setAttribute('disabled', 'true');
-        document.documentElement.classList.remove('dark-mode');
-    }
+    setTheme(themeToggle.checked);
     localStorage.setItem('theme', themeToggle.checked ? 'dark' : 'light');
 });
 
+// Initialize theme
+const savedTheme = localStorage.getItem('theme') === 'dark';
+themeToggle.checked = savedTheme;
+setTheme(savedTheme);
 // Set initial theme
 const savedTheme = localStorage.getItem('theme') || 'light';
 if(savedTheme === 'dark') {
