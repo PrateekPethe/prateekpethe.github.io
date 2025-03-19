@@ -109,6 +109,18 @@ input:checked + .slider:before {
     transform: scale(1.2);
 }
 
+.social-links a {
+    color: var(--text);
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--secondary);
+    transform: translateY(-3px);
+}
+
 /* Add all previous styles here */
 /* ... (rest of your CSS from previous answer) ... */
 :root {
