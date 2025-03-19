@@ -1,0 +1,27 @@
+:root {
+    --text: #FFFFFF;
+    --bg: #1A1A1A;
+    --card-bg: rgba(30, 30, 30, 0.9);
+    --shadow: 0 8px 32px rgba(0,0,0,0.3);
+    --glass: rgba(0,0,0,0.1);
+}
+
+body {
+    background: linear-gradient(45deg, #0f0f0f, #1a1a1a);
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.skill-tag {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background: rgba(255,255,255,0.1);
+    color: white;
+}
