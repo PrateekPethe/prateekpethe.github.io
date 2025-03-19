@@ -3,154 +3,338 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prateek Nikhil Pethe | Market Research Analyst</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/000000/resume.png">
+    <title>Prateek Pethe | Interactive Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #2EC4B6;
+            --dark: #2A2A2A;
+            --light: #F8F9FA;
+            --glass: rgba(255,255,255,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, #f3f3f3, #ffffff);
+            color: var(--dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Interactive Header */
+        .hero {
+            text-align: center;
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            top: -50%;
+            left: -50%;
+            z-index: -1;
+            transform: rotate(15deg);
+            opacity: 0.1;
+        }
+
+        .profile-card {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            display: inline-block;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: rotateY(10deg) rotateX(10deg) translateY(-5px);
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        /* Floating Navigation */
+        .floating-nav {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            padding: 1rem;
+            z-index: 100;
+        }
+
+        .nav-item {
+            width: 40px;
+            height: 40px;
+            margin: 0.5rem 0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Animated Sections */
+        .section {
+            padding: 4rem 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 5px;
+            margin: 1rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 0;
+            transition: width 1s ease;
+        }
+
+        /* Interactive Cards */
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: perspective(1000px) rotateY(0deg);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: perspective(1000px) rotateY(5deg);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Particle Background */
+        .particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @media (max-width: 768px) {
+            .floating-nav {
+                bottom: 1rem;
+                top: auto;
+                right: 50%;
+                transform: translateX(50%);
+                display: flex;
+            }
+            
+            .nav-item {
+                margin: 0 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <button id="themeToggle" class="theme-toggle">
-        <span class="toggle-icon">🌞</span>
-    </button>
+    <!-- Particle Background -->
+    <canvas class="particles"></canvas>
+
+    <!-- Floating Navigation -->
+    <nav class="floating-nav">
+        <div class="nav-item" data-section="home"><i class="fas fa-home"></i></div>
+        <div class="nav-item" data-section="experience"><i class="fas fa-briefcase"></i></div>
+        <div class="nav-item" data-section="projects"><i class="fas fa-code"></i></div>
+        <div class="nav-item" data-section="contact"><i class="fas fa-envelope"></i></div>
+    </nav>
+
+    <!-- Hero Section -->
     <header class="hero">
-        <div class="container">
-            <h1>Prateek Nikhil Pethe</h1>
-            <h2>Market Research Analyst</h2>
-            <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> Gurgaon, India</p>
-                <p><i class="fas fa-envelope"></i> prtk962510@gmail.com</p>
-                <p><i class="fas fa-phone"></i> +91 8972149163</p>
-                <div class="social-links">
-                    <a href="in/pnpethe" target="_blank"><i class="fab fa-linkedin"></i></a>
-                </div>
+        <div class="profile-card">
+            <img src="https://via.placeholder.com/150" alt="Prateek" class="avatar">
+            <h1>Prateek Pethe</h1>
+            <p class="tagline">Turning Data into Decisions</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fas fa-file-pdf"></i></a>
             </div>
         </div>
     </header>
 
-    <section class="summary">
-        <div class="container">
-            <h2>Summary</h2>
-            <p>Market Research Analyst with 3+ years of experience in research and consulting within the Telecom, Media & Technology (TMT)/Information Communication Technology (ICT) industry. Proficient in utilizing primary and secondary research tools and techniques to gather, analyze, and present data-driven insights.</p>
-        </div>
-    </section>
-
-    <section class="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h3>Analyst</h3>
-                    <h4>Evalueserve</h4>
-                    <p class="date">March 2022 - Present, Gurgaon</p>
+    <!-- Experience Section -->
+    <section class="section container" id="experience">
+        <h2 data-aos="fade-right">Professional Journey</h2>
+        <div class="timeline">
+            <div class="project-card" data-aos="zoom-in">
+                <h3>Evalueserve</h3>
+                <p class="date">2022-Present</p>
+                <ul>
+                    <li>Competitive landscape analysis</li>
+                    <li>Market intelligence reporting</li>
+                    <li>GTM strategy development</li>
+                </ul>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 85%"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="projects">
-        <div class="container">
-            <h2>Key Projects</h2>
-            <div class="project-category">
-                <h3>Competitor Intelligence & Market Insights</h3>
-                <ul>
-                    <li>Conducted competitive landscape analysis across India and South Korea</li>
-                    <li>Delivered market research using SEMrush and SimilarWeb for EMEA tracking</li>
-                    <li>Assessed device usage and licensing trends in India's e-commerce sector</li>
-                    <li>Developed cybersecurity intelligence profiles and defense strategies</li>
-                </ul>
-            </div>
-
-            <div class="project-category">
-                <h3>Competitor Landscape Mapping</h3>
-                <ul>
-                    <li>Analyzed graphics design industry players and market trends</li>
-                    <li>Developed Power BI dashboards for client presentations</li>
-                    <li>Conducted web traffic and marketing campaign analysis</li>
-                </ul>
-            </div>
-
-            <div class="project-category">
-                <h3>Go-to-Market Strategy & Pricing Estimation</h3>
-                <ul>
-                    <li>Supported data-driven GTM strategy development</li>
-                    <li>Conducted AI image generation pricing analysis</li>
-                    <li>Performed primary research for market entry tactics</li>
-                </ul>
-            </div>
-
-            <div class="project-category">
-                <h3>Proof of Concepts and Initial Research</h3>
-                <ul>
-                    <li>Conducted capex assessment, competitor profiling, and market entry analysis across key industries</li>
-                    <li>Designed proof of concepts for investment funds, mobile OS markets, and digital-native businesses, evaluating funding structures,
-regulatory landscapes, and technology adoption in APAC and Japan</li>
-                </ul>
+    <!-- Projects Section -->
+    <section class="section container" id="projects">
+        <h2 data-aos="fade-left">Featured Work</h2>
+        <div class="project-grid">
+            <div class="project-card" data-aos="flip-up">
+                <h3>AI Pricing Models</h3>
+                <p>Developed competitive pricing analysis for AI solutions</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">Market Research</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="education">
-        <div class="container">
-            <h2>Education</h2>
-            <div class="education-item">
-                <h3>Masters in Business Administration</h3>
-                <p>Specialization: Business Analytics</p>
-                <p>Balaji Institute of Management and Human Resource Development, Pune · 2022 · 72.0%</p>
-            </div>
-            <div class="education-item">
-                <h3>Bachelor of Technology</h3>
-                <p>Specialization: Computer Science</p>
-                <p>Sikkim Manipal Institute of Technology · 2020 · 6.71 GPA</p>
-            </div>
-        </div>
-    </section>
+    <script>
+        // Initialize animations
+        AOS.init({
+            duration: 1000,
+            once: false
+        });
 
-    <section class="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-item">Market Analysis</div>
-                <div class="skill-item">Competitive Intelligence</div>
-                <div class="skill-item">PowerBI</div>
-                <div class="skill-item">SEMrush & SimilarWeb (SEO Tools)</div>
-                <div class="skill-item">Advanced Excel</div>
-                <div class="skill-item">SWOT/PESTLE</div>
-                <div class="skill-item">Business Reporting</div>
-                <div class="skill-item">Data Visualization</div>
-                <div class="skill-item">Strategy Consulting</div>
-            </div>
-        </div>
-    </section>
+        // GSAP Animations
+        gsap.from(".profile-card", {
+            duration: 1.5,
+            y: 100,
+            opacity: 0,
+            ease: "power4.out"
+        });
 
-    <footer>
-        <div class="container">
-            <p>© 2023 Prateek Nikhil Pethe. All rights reserved.</p>
-        </div>
-    </footer>
-    
-<script>
-    const toggle = document.getElementById('themeToggle');
-    const storedTheme = localStorage.getItem('theme') || 'light';
-    
-    document.documentElement.setAttribute('data-theme', storedTheme);
+        // Particle System
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.querySelector('.particles');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.init();
+            }
 
-    toggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        
-        // Animate the icon
-        toggle.classList.add('spin');
-        setTimeout(() => toggle.classList.remove('spin'), 300);
-        
-        // Change emoji
-        toggle.querySelector('.toggle-icon').textContent = newTheme === 'dark' ? '🌜' : '🌞';
-    });
+            init() {
+                this.resize();
+                window.addEventListener('resize', () => this.resize());
+                this.createParticles();
+                this.animate();
+            }
 
-    // Add initial emoji based on theme
-    toggle.querySelector('.toggle-icon').textContent = storedTheme === 'dark' ? '🌜' : '🌞';
-</script>
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            createParticles() {
+                for(let i = 0; i < 100; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        size: Math.random() * 3 + 1,
+                        speedX: (Math.random() - 0.5) * 0.5,
+                        speedY: (Math.random() - 0.5) * 0.5
+                    });
+                }
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.particles.forEach(particle => {
+                    particle.x += particle.speedX;
+                    particle.y += particle.speedY;
+
+                    if(particle.x > this.canvas.width) particle.x = 0;
+                    if(particle.x < 0) particle.x = this.canvas.width;
+                    if(particle.y > this.canvas.height) particle.y = 0;
+                    if(particle.y < 0) particle.y = this.canvas.height;
+
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = `rgba(108, 99, 255, ${particle.size/4})`;
+                    this.ctx.fill();
+                });
+
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        new ParticleSystem();
+
+        // Scroll Interactions
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
