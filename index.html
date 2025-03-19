@@ -6,192 +6,21 @@
     <title>Prateek Pethe | Interactive Resume</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <style>
-        :root {
-            --primary: #6C63FF;
-            --secondary: #FF6584;
-            --accent: #2EC4B6;
-            --dark: #2A2A2A;
-            --light: #F8F9FA;
-            --glass: rgba(255,255,255,0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        body {
-            background: linear-gradient(45deg, #f3f3f3, #ffffff);
-            color: var(--dark);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        /* Interactive Header */
-        .hero {
-            text-align: center;
-            padding: 6rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            top: -50%;
-            left: -50%;
-            z-index: -1;
-            transform: rotate(15deg);
-            opacity: 0.1;
-        }
-
-        .profile-card {
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 2rem;
-            display: inline-block;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            transform-style: preserve-3d;
-            transition: all 0.3s ease;
-        }
-
-        .profile-card:hover {
-            transform: rotateY(10deg) rotateX(10deg) translateY(-5px);
-        }
-
-        .avatar {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .avatar:hover {
-            transform: scale(1.05) rotate(5deg);
-        }
-
-        /* Floating Navigation */
-        .floating-nav {
-            position: fixed;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            background: var(--glass);
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
-            padding: 1rem;
-            z-index: 100;
-        }
-
-        .nav-item {
-            width: 40px;
-            height: 40px;
-            margin: 0.5rem 0;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .nav-item:hover {
-            background: var(--primary);
-            transform: scale(1.2);
-        }
-
-        /* Animated Sections */
-        .section {
-            padding: 4rem 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        .section.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .skill-bar {
-            height: 10px;
-            background: rgba(0,0,0,0.1);
-            border-radius: 5px;
-            margin: 1rem 0;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            width: 0;
-            transition: width 1s ease;
-        }
-
-        /* Interactive Cards */
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 1rem 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transform: perspective(1000px) rotateY(0deg);
-            transition: all 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: perspective(1000px) rotateY(5deg);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-
-        /* Particle Background */
-        .particles {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        @media (max-width: 768px) {
-            .floating-nav {
-                bottom: 1rem;
-                top: auto;
-                right: 50%;
-                transform: translateX(50%);
-                display: flex;
-            }
-            
-            .nav-item {
-                margin: 0 0.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dark-mode.css" id="theme-style" disabled>
 </head>
 <body>
-    <!-- Particle Background -->
+    <!-- Theme Toggle -->
+    <div class="theme-switch-wrapper">
+        <span class="theme-switch-label">🌙</span>
+        <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider round"></span>
+        </label>
+        <span class="theme-switch-label">☀️</span>
+    </div>
+
+    <!-- Particle Canvas -->
     <canvas class="particles"></canvas>
 
     <!-- Floating Navigation -->
@@ -205,136 +34,104 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="profile-card">
-            <img src="https://via.placeholder.com/150" alt="Prateek" class="avatar">
-            <h1>Prateek Pethe</h1>
-            <p class="tagline">Turning Data into Decisions</p>
+        <img src="assets/images/profile.jpg" alt="Prateek Pethe" class="avatar">
+        <h1>Prateek Nikhil Pethe</h1>
+        <p class="tagline">Market Research Analyst</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fas fa-file-pdf"></i></a>
+                <a href="in/pnpethe" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:prtko62510@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="Prateek_Nikhil_Pethe_Resume_2025(2).pdf" download><i class="fas fa-file-pdf"></i></a>
             </div>
         </div>
     </header>
 
     <!-- Experience Section -->
     <section class="section container" id="experience">
-        <h2 data-aos="fade-right">Professional Journey</h2>
+        <h2 data-aos="fade-right">Professional Experience</h2>
         <div class="timeline">
             <div class="project-card" data-aos="zoom-in">
-                <h3>Evalueserve</h3>
-                <p class="date">2022-Present</p>
+                <h3>Analyst - Evalueserve</h3>
+                <p class="date">March 2022 - Present</p>
                 <ul>
-                    <li>Competitive landscape analysis</li>
-                    <li>Market intelligence reporting</li>
-                    <li>GTM strategy development</li>
+                    <li>Conducted competitive landscape analysis across India/South Korea</li>
+                    <li>Developed Power BI dashboards for client presentations</li>
+                    <li>Performed market entry analysis for APAC/Japan</li>
                 </ul>
-                <div class="skill-bar">
+            <div class="skill-bar">
                     <div class="skill-progress" style="width: 85%"></div>
-                </div>
+             </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
     <section class="section container" id="projects">
-        <h2 data-aos="fade-left">Featured Work</h2>
+        <h2 data-aos="fade-left">Key Projects</h2>
         <div class="project-grid">
             <div class="project-card" data-aos="flip-up">
-                <h3>AI Pricing Models</h3>
-                <p>Developed competitive pricing analysis for AI solutions</p>
+                <h3>Competitor Intelligence & Market Insights</h3>
+                <ul>
+                    <li>Analyzed graphics design industry players</li>
+                    <li>Developed cybersecurity intelligence profiles</li>
+                    <li>Conducted capex assessment for APAC markets</li>
+                </ul>
                 <div class="tech-stack">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">SEMrush</span>
                     <span class="tech-tag">Market Research</span>
+                </div>
+            </div>
+            
+            <div class="project-card" data-aos="flip-up">
+                <h3>Go-to-Market Strategy</h3>
+                <ul>
+                    <li>Developed AI image generation pricing models</li>
+                    <li>Conducted primary market research</li>
+                    <li>Created competitor benchmarking analysis</li>
+                </ul>
+                <div class="tech-stack">
+                    <span class="tech-tag">Excel</span>
+                    <span class="tech-tag">SWOT Analysis</span>
+                    <span class="tech-tag">PESTLE</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <script>
-        // Initialize animations
-        AOS.init({
-            duration: 1000,
-            once: false
-        });
+    <div class="education-section">
+    <h3>Education</h3>
+    <div class="education-item">
+        <h4>MBA in Business Analytics</h4>
+        <p>Balaji Institute of Management · 2022</p>
+        <p>72%</p>
+    </div>
+    <div class="education-item">
+        <h4>B.Tech in Computer Science</h4>
+        <p>Sikkim Manipal Institute · 2020</p>
+        <p>6.71 GPA</p>
+    </div>
+</div>
 
-        // GSAP Animations
-        gsap.from(".profile-card", {
-            duration: 1.5,
-            y: 100,
-            opacity: 0,
-            ease: "power4.out"
-        });
+    <!-- Contact Form -->
+    <section class="section container" id="contact">
+        <h2 data-aos="fade-up">Get in Touch</h2>
+        <form class="contact-form" netlify>
+            <div class="form-group">
+                <input type="text" placeholder="Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <textarea placeholder="Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="glow-button">Send Message 🚀</button>
+        </form>
+    </section>
 
-        // Particle System
-        class ParticleSystem {
-            constructor() {
-                this.canvas = document.querySelector('.particles');
-                this.ctx = this.canvas.getContext('2d');
-                this.particles = [];
-                this.init();
-            }
-
-            init() {
-                this.resize();
-                window.addEventListener('resize', () => this.resize());
-                this.createParticles();
-                this.animate();
-            }
-
-            resize() {
-                this.canvas.width = window.innerWidth;
-                this.canvas.height = window.innerHeight;
-            }
-
-            createParticles() {
-                for(let i = 0; i < 100; i++) {
-                    this.particles.push({
-                        x: Math.random() * this.canvas.width,
-                        y: Math.random() * this.canvas.height,
-                        size: Math.random() * 3 + 1,
-                        speedX: (Math.random() - 0.5) * 0.5,
-                        speedY: (Math.random() - 0.5) * 0.5
-                    });
-                }
-            }
-
-            animate() {
-                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-                
-                this.particles.forEach(particle => {
-                    particle.x += particle.speedX;
-                    particle.y += particle.speedY;
-
-                    if(particle.x > this.canvas.width) particle.x = 0;
-                    if(particle.x < 0) particle.x = this.canvas.width;
-                    if(particle.y > this.canvas.height) particle.y = 0;
-                    if(particle.y < 0) particle.y = this.canvas.height;
-
-                    this.ctx.beginPath();
-                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                    this.ctx.fillStyle = `rgba(108, 99, 255, ${particle.size/4})`;
-                    this.ctx.fill();
-                });
-
-                requestAnimationFrame(() => this.animate());
-            }
-        }
-
-        new ParticleSystem();
-
-        // Scroll Interactions
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.section').forEach(section => {
-            observer.observe(section);
-        });
-    </script>
+    <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts/particles.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
