@@ -1,99 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your GitHub Landing Page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #121212; /* Dark background color */
-            color: #fff; /* Text color */
-        }
-
-        .container {
-            padding: 20px;
-            text-align: center;
-        }
-
-        h1 {
-            color: #fff; /* Header text color */
-        }
-
-        p {
-            color: rgba(255, 255, 255, 0.8); /* Text color with slight transparency */
-        }
-
-        .social-links {
-            margin-top: 20px;
-        }
-
-        .social-links a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 24px;
-        }
-
-        .social-links a:hover {
-            color: #f0f0f0; /* Hover color */
-        }
-
-        footer {
-            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-            color: #fff;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        .code {
-            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 5px;
-            text-align: left;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.05); /* Soft shadow */
-        }
-    </style>
+    <title>John Doe | Professional Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/000000/resume.png">
 </head>
-
 <body>
+    <header class="hero">
+        <div class="container">
+            <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-img">
+            <h1>John Doe</h1>
+            <h2>Senior Software Engineer</h2>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:john@example.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </header>
 
-    <div class="container">
-        <h1>Welcome to My GitHub Page</h1>
-        <p>Explore my Rust projects and repositories.</p>
-        <div class="code">
-            <pre><code>fn main() {
-    println!("Hello, World!");
-}</code></pre>
+    <section class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Passionate software engineer with 5+ years of experience in full-stack development...</p>
         </div>
-        <div class="social-links">
-            <a href="https://github.com/your_username" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/your_username" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <!-- Add more social links if needed -->
+    </section>
+
+    <section class="experience">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Senior Software Engineer</h3>
+                    <h4>Tech Corp Inc.</h4>
+                    <p class="date">2020 - Present</p>
+                    <ul>
+                        <li>Led team of 5 developers in building enterprise applications</li>
+                        <li>Implemented CI/CD pipelines reducing deployment time by 40%</li>
+                    </ul>
+                </div>
+                <!-- Add more timeline items -->
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section class="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">JavaScript</div>
+                <div class="skill-item">React</div>
+                <div class="skill-item">Node.js</div>
+                <!-- Add more skills -->
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
+            <p>© 2023 John Doe. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
