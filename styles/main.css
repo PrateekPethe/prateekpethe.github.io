@@ -373,4 +373,5 @@ input:focus, textarea:focus {
     height: 100%;
     z-index: -1;
     pointer-events: none;
+    transition: background-color 0.3s ease;
 }
