@@ -18,22 +18,24 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    position: relative;
 }
 
 header h1 {
     font-size: 2.5rem;
-    opacity: 0; /* Initially hidden for fade-in animation */
+    opacity: 0;
 }
 
 header p {
     font-size: 1.2rem;
     opacity: 0;
+    margin-top: 10px;
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 header nav ul li {
@@ -44,8 +46,49 @@ header nav ul li {
 header nav ul li a {
     color: #fff;
     text-decoration: none;
-    opacity: 0; /* Initially hidden for slide-in animation */
-    transform: translateX(-20px); /* Start with slight movement from the left */
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+/* Circle Container */
+.circle-container {
+    position: relative;
+    margin-top: 30px;
+    height: 200px;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007BFF;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.circle-1 {
+    left: 30%;
+}
+
+.circle-2 {
+    right: 30%;
+}
+
+/* Styling for sections */
+section {
+    margin: 20px 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    opacity: 0;
+}
+
+p {
+    font-size: 1.1rem;
+    opacity: 0;
 }
 
 footer {
@@ -53,31 +96,4 @@ footer {
     padding: 10px 0;
     background-color: #333;
     color: #fff;
-}
-
-section {
-    margin: 20px 0;
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    opacity: 0; /* Initially hidden for fade-in animation */
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 8px;
-}
-
-.project {
-    margin-bottom: 20px;
-}
-
-.project h3 {
-    font-size: 1.5rem;
 }
