@@ -22,11 +22,18 @@ header {
 
 header h1 {
     font-size: 2.5rem;
+    opacity: 0; /* Initially hidden for fade-in animation */
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0;
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
+    margin-top: 10px;
 }
 
 header nav ul li {
@@ -37,6 +44,8 @@ header nav ul li {
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+    opacity: 0; /* Initially hidden for slide-in animation */
+    transform: translateX(-20px); /* Start with slight movement from the left */
 }
 
 footer {
@@ -53,6 +62,7 @@ section {
 h2 {
     font-size: 2rem;
     margin-bottom: 10px;
+    opacity: 0; /* Initially hidden for fade-in animation */
 }
 
 ul {
