@@ -456,3 +456,17 @@ body {
 .project-card h3 { font-size: 1.5rem; margin-bottom: 10px; }
 .tag { display: inline-block; padding: 5px 12px; border-radius: 20px; background: rgba(0,240,255,0.1); color: var(--accent); font-size: 0.8rem; margin-bottom: 15px; }
 .project-card p:not(.tag) { color: var(--text-muted); line-height: 1.6; }
+
+/* Responsive adjustments for expanded views */
+@media (max-width: 768px) {
+  .fullscreen-content { padding: 30px; }
+  .close-fullscreen { top: 15px; right: 15px; }
+  .huge-name { font-size: 3rem; }
+  .huge-role { font-size: 1.5rem; }
+  .stats-grid { flex-direction: column; gap: 20px; padding: 15px 0; }
+  .full-bio { font-size: 1.1rem; }
+  .full-skills h2, .full-experience h2, .full-projects h2 { font-size: 2rem; }
+  .exp-block h3 { font-size: 1.2rem; }
+  .exp-block ul { font-size: 1rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+}
