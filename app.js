@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
         start: "top top",
         end: () => `+=${expWrapper.scrollWidth}`,
         pin: true,
-        animation: gsap.to(expWrapper, {x: getScrollAmount}),
         scrub: 1,
         invalidateOnRefresh: true
       }
