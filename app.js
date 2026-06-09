@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
   mm.add("(min-width: 769px)", () => {
     const expWrapper = document.querySelector(".exp-cards-wrapper");
     
-    // Calculate total scroll distance
-    const getScrollAmount = () => -(expWrapper.scrollWidth - window.innerWidth + 100);
+    // Calculate total scroll distance including padding
+    const getScrollAmount = () => -(expWrapper.scrollWidth - window.innerWidth + (window.innerWidth * 0.1));
 
     gsap.to(expWrapper, {
       x: getScrollAmount,

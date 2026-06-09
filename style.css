@@ -159,6 +159,14 @@ h1, h2, h3, h4 {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.icon-link svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
 .icon-link:hover {
   background: var(--color-accent);
   color: #000;
@@ -293,6 +301,7 @@ h1, h2, h3, h4 {
   display: flex;
   gap: 2rem;
   width: max-content;
+  padding-right: 5vw;
 }
 
 .exp-card {
@@ -333,14 +342,13 @@ h1, h2, h3, h4 {
 }
 
 .project-panel {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 5%;
-  position: sticky;
-  top: 0;
+  padding: 100px 5%;
+  position: relative;
 }
 
 .project-content {
