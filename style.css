@@ -135,7 +135,7 @@ h1, h2, h3, h4 {
   font-size: 1.2rem;
   color: var(--color-text-muted);
   max-width: 600px;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto;
   opacity: 0;
 }
 
@@ -159,12 +159,9 @@ h1, h2, h3, h4 {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.icon-link svg {
-  width: 24px;
-  height: 24px;
-  stroke: currentColor;
-  stroke-width: 2;
-  fill: none;
+.icon-link ion-icon {
+  font-size: 24px;
+  color: currentColor;
 }
 
 .icon-link:hover {
