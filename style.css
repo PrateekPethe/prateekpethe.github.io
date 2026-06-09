@@ -351,10 +351,9 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  right: 0;
+  bottom: 0;
   z-index: 1000;
-  display: flex;
   pointer-events: none; /* activated via JS */
   visibility: hidden;
 }
@@ -368,8 +367,8 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  right: 0;
+  bottom: 0;
   background: rgba(5,5,5,0.85);
   backdrop-filter: blur(10px);
   opacity: 0;
