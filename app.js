@@ -1,5 +1,4 @@
-// Initialize GSAP Flip
-gsap.registerPlugin(Flip);
+// GSAP Core is loaded in HTML
 
 // --- CLOCK ---
 function updateClock() {
@@ -182,9 +181,10 @@ setTimeout(() => {
 }, 500);
 
 
-// --- GSAP FLIP BENTO EXPANSION ---
+// --- GSAP MODAL EXPANSION ---
 const tiles = document.querySelectorAll('.bento-tile');
 const overlayContainer = document.getElementById('fullscreen-container');
+const overlayBg = document.querySelector('.fullscreen-bg');
 const overlayContent = document.getElementById('fullscreen-content');
 const detailWrapper = document.getElementById('detail-wrapper');
 const closeBtn = document.getElementById('close-btn');
@@ -205,31 +205,23 @@ tiles.forEach(tile => {
     // 2. Prep Overlay
     overlayContainer.classList.add('active');
     
-    // Fit overlay over the clicked tile initially
-    Flip.fit(overlayContent, tile);
+    // 3. Reset states for animation
+    gsap.set(overlayContent, { opacity: 0, y: 30, scale: 0.95 });
+    gsap.set(detailWrapper, { opacity: 0, y: 20 });
+    gsap.set(closeBtn, { opacity: 0, scale: 0.5 });
 
-    // 3. Record state
-    const state = Flip.getState(overlayContent);
-
-    // 4. Change styles to fullscreen target
-    overlayContent.style.width = "100%";
-    overlayContent.style.height = "100%";
-    overlayContent.style.position = "relative";
-    overlayContent.style.top = "0";
-    overlayContent.style.left = "0";
-    overlayContent.classList.add("animating");
-
-    // Fade out original tile slightly
-    gsap.to(tile, { opacity: 0, duration: 0.3 });
-
-    // 5. FLIP Animate
-    Flip.from(state, {
-      duration: 0.6,
-      ease: "power3.inOut",
+    // 4. Animate Background & Modal
+    gsap.to(overlayBg, { opacity: 1, duration: 0.4, ease: "power2.out" });
+    gsap.to(overlayContent, { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1, 
+      duration: 0.5, 
+      ease: "power3.out",
       onComplete: () => {
         // Fade in details
-        gsap.fromTo(detailWrapper, {opacity: 0, y: 20}, {opacity: 1, y: 0, duration: 0.4});
-        gsap.fromTo(closeBtn, {opacity: 0, scale: 0.5}, {opacity: 1, scale: 1, duration: 0.3});
+        gsap.to(detailWrapper, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" });
+        gsap.to(closeBtn, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" });
       }
     });
   });
@@ -238,29 +230,23 @@ tiles.forEach(tile => {
 closeBtn.addEventListener('click', () => {
   if(!activeTile) return;
 
-  // Fade out details first
-  gsap.to(detailWrapper, {opacity: 0, duration: 0.2});
-  gsap.to(closeBtn, {opacity: 0, duration: 0.2});
-
-  // Record fullscreen state
-  const state = Flip.getState(overlayContent);
-
-  // Change styles back to fit over the original tile
-  overlayContent.style.width = "";
-  overlayContent.style.height = "";
-  overlayContent.style.position = "";
-  overlayContent.style.top = "";
-  overlayContent.style.left = "";
-  overlayContent.classList.remove("animating");
-  Flip.fit(overlayContent, activeTile);
-
-  // FLIP animate back
-  Flip.from(state, {
-    duration: 0.6,
-    ease: "power3.inOut",
+  // Animate out
+  gsap.to([detailWrapper, closeBtn], { opacity: 0, duration: 0.2 });
+  
+  gsap.to(overlayContent, { 
+    opacity: 0, 
+    y: 20, 
+    scale: 0.95, 
+    duration: 0.3, 
+    ease: "power2.in" 
+  });
+  
+  gsap.to(overlayBg, { 
+    opacity: 0, 
+    duration: 0.4, 
+    ease: "power2.inOut",
     onComplete: () => {
       overlayContainer.classList.remove('active');
-      gsap.to(activeTile, { opacity: 1, duration: 0.3 });
       activeTile = null;
       detailWrapper.innerHTML = "";
     }
