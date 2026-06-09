@@ -3,269 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prateek Nikhil Pethe | Data Analyst</title>
-  <link rel="stylesheet" href="style.css?v=3">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <title>Prateek Nikhil Pethe | Data Analyst Dashboard</title>
+  <link rel="stylesheet" href="style.css?v=1">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
 
-  <!-- Background Canvas for dynamic gradient -->
-  <canvas id="gradient-canvas" data-transition-in></canvas>
+  <!-- Ambient background -->
+  <div class="ambient-bg"></div>
 
-  <nav class="navbar">
-    <div class="logo">PNP.</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-    </ul>
-  </nav>
+  <!-- Main Dashboard Wrapper -->
+  <main class="dashboard">
+    <header class="topbar">
+      <div class="status-indicator">
+        <span class="dot"></span>
+        <span>SYSTEM: ONLINE | STATUS: ANALYZING DATA</span>
+      </div>
+      <div class="time-display" id="clock">00:00:00</div>
+    </header>
 
-  <main>
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-      <div class="hero-content">
-        <h2 class="pre-title">Hi, I am</h2>
-        <h1 class="hero-title">
-          <span class="word">Prateek</span>
-          <span class="word">Nikhil</span>
-          <span class="word">Pethe</span>
-        </h1>
-        <h3 class="hero-subtitle">Data Analyst & Strategist</h3>
-        <p class="hero-desc">Turning complex, raw data into actionable business strategies and interactive visual insights.</p>
-        
-        <div class="contact-links">
-          <a href="mailto:prtk962510@gmail.com" class="icon-link"><ion-icon name="mail-outline"></ion-icon></a>
-          <a href="https://linkedin.com/in/pnpethe" class="icon-link" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
-          <a href="tel:+918972149163" class="icon-link"><ion-icon name="call-outline"></ion-icon></a>
-          <a href="https://github.com/PrateekPethe" class="icon-link" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+    <!-- The Bento Grid -->
+    <div class="bento-grid">
+      
+      <!-- Tile 1: Identity -->
+      <div class="bento-tile" data-flip-id="identity" id="tile-identity">
+        <div class="tile-content">
+          <div class="identity-header">
+            <div class="avatar-ring">
+              <ion-icon name="person-outline"></ion-icon>
+            </div>
+            <div>
+              <h1 class="name">Prateek Pethe</h1>
+              <h2 class="role">Data Analyst</h2>
+            </div>
+          </div>
+          <p class="bio">Turning complex, raw data into actionable business strategies and interactive visual insights.</p>
+          <div class="social-pills">
+            <a href="https://linkedin.com/in/pnpethe" target="_blank" class="pill"><ion-icon name="logo-linkedin"></ion-icon> LinkedIn</a>
+            <a href="https://github.com/PrateekPethe" target="_blank" class="pill"><ion-icon name="logo-github"></ion-icon> GitHub</a>
+            <a href="mailto:prtk962510@gmail.com" class="pill"><ion-icon name="mail-outline"></ion-icon> Email</a>
+          </div>
+          <div class="expand-hint">Click to expand <ion-icon name="expand-outline"></ion-icon></div>
         </div>
       </div>
-      <div class="scroll-indicator">
-        <div class="mouse"></div>
-        <p>Scroll to Explore</p>
-      </div>
-    </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="about" id="about">
-      <div class="container">
-        <h2 class="section-title">The Analyst</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p class="reveal-text">Based in Gurgaon, India, with ~3.5 years of experience in research and consulting within the TMT/ICT industry.</p>
-            <p class="reveal-text">My expertise lies in data visualization, predictive modeling, and strategic market mapping. I design interactive Power BI dashboards, extract and transform large datasets using Python and SQL, and build data-driven Go-To-Market strategies.</p>
+      <!-- Tile 2: Skills Canvas -->
+      <div class="bento-tile" data-flip-id="skills" id="tile-skills">
+        <div class="tile-content">
+          <h3 class="tile-title">Skill Constellation</h3>
+          <p class="tile-subtitle">Interactive Physics Graph</p>
+          <div class="canvas-container" id="canvas-container">
+            <canvas id="skills-canvas"></canvas>
           </div>
-          <div class="about-stats">
-            <div class="stat-box">
-              <span class="stat-num">3.5+</span>
-              <span class="stat-label">Years Experience</span>
-            </div>
-            <div class="stat-box">
-              <span class="stat-num">MBA</span>
-              <span class="stat-label">Business Analytics</span>
-            </div>
-            <div class="stat-box">
-              <span class="stat-num">B.Tech</span>
-              <span class="stat-label">Computer Science</span>
-            </div>
-          </div>
+          <div class="expand-hint">Click to expand <ion-icon name="expand-outline"></ion-icon></div>
         </div>
       </div>
-    </section>
 
-    <!-- EXPERIENCE PINNED SECTION -->
-    <section class="experience" id="experience">
-      <div class="experience-container">
-        <div class="exp-header">
-          <h2 class="section-title">Professional Experience</h2>
-          <h3 class="company">Analyst @ Evalueserve (Mar 2022 - Present)</h3>
-        </div>
-        
-        <div class="exp-cards-wrapper">
-          <div class="exp-card">
-            <div class="card-inner">
-              <ion-icon name="pie-chart-outline" class="card-icon"></ion-icon>
-              <h4>Competitor Intelligence & Market Insights</h4>
-              <p>Analyzed competitive landscapes across India and South Korea, evaluating product offerings, pricing, and GTM strategies. Delivered market research and web analytics using SEMrush and SimilarWeb.</p>
-            </div>
+      <!-- Tile 3: Experience Terminal -->
+      <div class="bento-tile col-span-2" data-flip-id="experience" id="tile-experience">
+        <div class="tile-content terminal-ui">
+          <div class="terminal-header">
+            <span class="btn close"></span>
+            <span class="btn min"></span>
+            <span class="btn max"></span>
+            <span class="terminal-title">bash — evalueserve.exe</span>
           </div>
-          <div class="exp-card">
-            <div class="card-inner">
-              <ion-icon name="map-outline" class="card-icon"></ion-icon>
-              <h4>Competitor Landscape Mapping</h4>
-              <p>Developed Power BI dashboards for client presentations, showcasing critical findings, insights, and recommendations. Analyzed competitor offerings, pricing strategies, and marketing campaigns.</p>
-            </div>
+          <div class="terminal-body" id="terminal-output">
+            <!-- Typewriter effect will inject text here -->
           </div>
-          <div class="exp-card">
-            <div class="card-inner">
-              <ion-icon name="trending-up-outline" class="card-icon"></ion-icon>
-              <h4>Go-to-Market Strategy</h4>
-              <p>Designed data-driven Go-To Market strategies, identifying key industries, adoption drivers, and regional pricing insights. Built competitor intelligence on AI image generation.</p>
-            </div>
-          </div>
-          <div class="exp-card">
-            <div class="card-inner">
-              <ion-icon name="flask-outline" class="card-icon"></ion-icon>
-              <h4>Proof of Concepts</h4>
-              <p>Conducted capex assessment, competitor profiling, and market entry analysis. Designed proof of concepts for investment funds, mobile OS markets, and digital-native businesses in APAC and Japan.</p>
-            </div>
-          </div>
+          <div class="expand-hint">Click to expand <ion-icon name="expand-outline"></ion-icon></div>
         </div>
       </div>
-    </section>
 
-    <!-- PROJECTS MULTI-FLAVOR SECTION -->
-    <section class="projects" id="projects">
-      <div class="projects-wrapper">
-        <!-- Project 1 -->
-        <div class="project-panel" data-color="#0a0a0a">
-          <div class="project-content">
-            <div class="project-info">
-              <p class="project-category">Machine Learning</p>
-              <h2 class="project-title">Online Payment Fraud Detection</h2>
-              <p class="project-desc">Predictive modeling utilizing Python to identify fraudulent transactions and anomalies in high-volume payment data streams.</p>
-              <div class="tech-stack">
-                <span>Python</span>
-                <span>Scikit-Learn</span>
-                <span>Pandas</span>
-              </div>
+      <!-- Tile 4: Projects Vault -->
+      <div class="bento-tile col-span-2" data-flip-id="projects" id="tile-projects">
+        <div class="tile-content">
+          <h3 class="tile-title">Data Models & Visualizations</h3>
+          <div class="projects-mini-grid">
+            <div class="project-mini-card">
+              <ion-icon name="shield-checkmark-outline"></ion-icon>
+              <span>Fraud Detection</span>
             </div>
-            <div class="project-visual">
-              <div class="mockup mockup-ml">
-                <ion-icon name="shield-checkmark-outline" class="mockup-icon"></ion-icon>
-              </div>
+            <div class="project-mini-card">
+              <ion-icon name="bar-chart-outline"></ion-icon>
+              <span>Competitor BI</span>
             </div>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-panel" data-color="#141b2d">
-          <div class="project-content">
-            <div class="project-info">
-              <p class="project-category">Data Visualization</p>
-              <h2 class="project-title">Competitor Landscape Power BI Dashboard</h2>
-              <p class="project-desc">Interactive business intelligence reporting tool tracking key competitor metrics, pricing strategies, and market positioning.</p>
-              <div class="tech-stack">
-                <span>Power BI</span>
-                <span>DAX</span>
-                <span>SQL</span>
-              </div>
+            <div class="project-mini-card">
+              <ion-icon name="globe-outline"></ion-icon>
+              <span>GTM Analytics</span>
             </div>
-            <div class="project-visual">
-              <div class="mockup mockup-bi">
-                <ion-icon name="bar-chart-outline" class="mockup-icon"></ion-icon>
-              </div>
+            <div class="project-mini-card">
+              <ion-icon name="analytics-outline"></ion-icon>
+              <span>Web Traffic</span>
             </div>
           </div>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-panel" data-color="#1c1124">
-          <div class="project-content">
-            <div class="project-info">
-              <p class="project-category">Analytics</p>
-              <h2 class="project-title">Go-to-Market & Pricing Analytics</h2>
-              <p class="project-desc">Strategic analytical models assessing willingness to pay, adoption drivers, and market entry tactics across APAC regions.</p>
-              <div class="tech-stack">
-                <span>Excel</span>
-                <span>Market Research</span>
-                <span>Financial Modeling</span>
-              </div>
-            </div>
-            <div class="project-visual">
-              <div class="mockup mockup-gtm">
-                <ion-icon name="globe-outline" class="mockup-icon"></ion-icon>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Project 4 -->
-        <div class="project-panel" data-color="#0d241d">
-          <div class="project-content">
-            <div class="project-info">
-              <p class="project-category">Web Analytics</p>
-              <h2 class="project-title">EMEA Web Analytics Pipeline</h2>
-              <p class="project-desc">Data pipeline leveraging SEMrush and SimilarWeb to monitor digital footprints and web traffic trends in the EMEA sector.</p>
-              <div class="tech-stack">
-                <span>SEMrush</span>
-                <span>SimilarWeb</span>
-                <span>Data Engineering</span>
-              </div>
-            </div>
-            <div class="project-visual">
-              <div class="mockup mockup-web">
-                <ion-icon name="analytics-outline" class="mockup-icon"></ion-icon>
-              </div>
-            </div>
-          </div>
+          <div class="expand-hint">Click to expand <ion-icon name="expand-outline"></ion-icon></div>
         </div>
       </div>
-    </section>
 
-    <!-- SKILLS SECTION -->
-    <section class="skills" id="skills">
-      <div class="container">
-        <h2 class="section-title">Technical Proficiency</h2>
-        
-        <div class="skills-grid">
-          <div class="skill-chart">
-            <svg class="circular-chart" viewBox="0 0 36 36">
-              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-              <path class="circle" stroke-dasharray="95, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-              <text x="18" y="20.35" class="percentage">95%</text>
-            </svg>
-            <h3>Power BI & BI Reporting</h3>
-          </div>
-          
-          <div class="skill-chart">
-            <svg class="circular-chart" viewBox="0 0 36 36">
-              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-              <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-              <text x="18" y="20.35" class="percentage">90%</text>
-            </svg>
-            <h3>Python (Pandas, Numpy)</h3>
-          </div>
-          
-          <div class="skill-chart">
-            <svg class="circular-chart" viewBox="0 0 36 36">
-              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-              <path class="circle" stroke-dasharray="85, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-              <text x="18" y="20.35" class="percentage">85%</text>
-            </svg>
-            <h3>SQL & Database Mgmt</h3>
-          </div>
-
-          <div class="skill-chart">
-            <svg class="circular-chart" viewBox="0 0 36 36">
-              <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-              <path class="circle" stroke-dasharray="90, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
-              <text x="18" y="20.35" class="percentage">90%</text>
-            </svg>
-            <h3>Advanced Excel</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="footer-content">
-        <h2>Ready to dive into the data?</h2>
-        <a href="mailto:prtk962510@gmail.com" class="btn-primary">Get In Touch</a>
-        <p>&copy; 2026 Prateek Nikhil Pethe. All rights reserved.</p>
-      </div>
-    </footer>
+    </div>
   </main>
 
-  <!-- GSAP and Plugins -->
+  <!-- Expanded Detail Views (Hidden by default) -->
+  <div class="fullscreen-container" id="fullscreen-container">
+    <div class="fullscreen-bg"></div>
+    <div class="fullscreen-content" id="fullscreen-content">
+      <button class="close-fullscreen" id="close-btn"><ion-icon name="close-outline"></ion-icon></button>
+      <div class="detail-wrapper" id="detail-wrapper">
+        <!-- Content injected dynamically via JS based on clicked tile -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Templates for Fullscreen Views -->
+  <template id="tpl-identity">
+    <div class="full-identity">
+      <h1 class="huge-name">Prateek Nikhil Pethe</h1>
+      <h2 class="huge-role">Data Analyst & Strategist</h2>
+      <div class="stats-grid">
+        <div class="stat"><span class="num">3.5+</span><span class="lbl">Years Exp.</span></div>
+        <div class="stat"><span class="num">MBA</span><span class="lbl">Business Analytics</span></div>
+        <div class="stat"><span class="num">B.Tech</span><span class="lbl">Computer Science</span></div>
+      </div>
+      <p class="full-bio">Based in Gurgaon, India. My expertise lies in data visualization, predictive modeling, and strategic market mapping. I design interactive Power BI dashboards, extract and transform large datasets using Python and SQL, and build data-driven Go-To-Market strategies.</p>
+    </div>
+  </template>
+
+  <template id="tpl-skills">
+    <div class="full-skills">
+      <h2>Technical Arsenal</h2>
+      <p>Interact with the physics graph or review the detailed metrics below.</p>
+      <ul class="skills-list">
+        <li><strong>Languages & Databases:</strong> Python (Pandas, Numpy, Scikit-Learn), SQL</li>
+        <li><strong>Business Intelligence:</strong> Power BI, Advanced Excel</li>
+        <li><strong>Market Intelligence:</strong> SEMrush, SimilarWeb, Primary/Secondary Research</li>
+        <li><strong>Analytical Techniques:</strong> Predictive Modeling, Competitive Landscape Mapping, GTM Strategy</li>
+      </ul>
+    </div>
+  </template>
+
+  <template id="tpl-experience">
+    <div class="full-experience">
+      <h2>Evalueserve | Analyst</h2>
+      <p class="dates">March 2022 – Present | Gurgaon, India</p>
+      
+      <div class="exp-block">
+        <h3>Competitor Intelligence & Market Insights</h3>
+        <ul>
+          <li>Conducted competitive landscape analysis across India and South Korea, evaluating product offerings, pricing, and GTM strategies.</li>
+          <li>Delivered market research and web analytics using SEMrush and SimilarWeb to track competitor performance in EMEA.</li>
+          <li>Developed cybersecurity intelligence profiles, mapping attack surfaces, incident history, and defensive strategies.</li>
+        </ul>
+      </div>
+
+      <div class="exp-block">
+        <h3>Competitor Landscape Mapping</h3>
+        <ul>
+          <li>Analyzed competitor offerings, pricing strategies, hiring patterns, web traffic, and marketing campaigns.</li>
+          <li>Developed Power BI dashboards for client presentations, showcasing critical findings, insights, and recommendations.</li>
+        </ul>
+      </div>
+
+      <div class="exp-block">
+        <h3>Go-to-Market Strategy & Pricing Estimation</h3>
+        <ul>
+          <li>Supported in designing data-driven Go-To Market strategy, identifying key industries, adoption drivers, and regional pricing insights.</li>
+          <li>Built competitor intelligence on AI image generation, analyzing pricing models and market entry tactics.</li>
+        </ul>
+      </div>
+    </div>
+  </template>
+
+  <template id="tpl-projects">
+    <div class="full-projects">
+      <h2>Project Vault</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="p-icon"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
+          <h3>Online Payment Fraud Detection</h3>
+          <p class="tag">Machine Learning</p>
+          <p>Predictive modeling utilizing Python to identify fraudulent transactions and anomalies in high-volume payment data streams.</p>
+        </div>
+        <div class="project-card">
+          <div class="p-icon"><ion-icon name="bar-chart-outline"></ion-icon></div>
+          <h3>Competitor Power BI Dashboard</h3>
+          <p class="tag">Data Visualization</p>
+          <p>Interactive business intelligence reporting tool tracking key competitor metrics, pricing strategies, and market positioning.</p>
+        </div>
+        <div class="project-card">
+          <div class="p-icon"><ion-icon name="globe-outline"></ion-icon></div>
+          <h3>Go-to-Market Analytics</h3>
+          <p class="tag">Analytics</p>
+          <p>Strategic analytical models assessing willingness to pay, adoption drivers, and market entry tactics across APAC regions.</p>
+        </div>
+        <div class="project-card">
+          <div class="p-icon"><ion-icon name="analytics-outline"></ion-icon></div>
+          <h3>EMEA Web Analytics Pipeline</h3>
+          <p class="tag">Data Engineering</p>
+          <p>Data pipeline leveraging SEMrush and SimilarWeb to monitor digital footprints and web traffic trends in the EMEA sector.</p>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- GSAP Core & FLIP Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Flip.min.js"></script>
   
-  <!-- Custom JS -->
-  <script src="app.js?v=4"></script>
+  <script src="app.js?v=1"></script>
 </body>
 </html>
