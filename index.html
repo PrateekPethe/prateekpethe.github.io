@@ -1,324 +1,816 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Prateek Nikhil Pethe - Market Research Analyst with expertise in competitive intelligence, business analytics, and strategic market insights.">
-    <meta name="keywords" content="Market Research, Business Analytics, Competitive Intelligence, Data Visualization, SWOT Analysis">
-    <meta name="author" content="Prateek Nikhil Pethe">
-    <title>Prateek Nikhil Pethe - Market Research Analyst</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prateek Nikhil Pethe - Data Analyst</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="nav-name">Prateek Nikhil Pethe</span>
-                <span class="nav-title">Market Research Analyst</span>
-            </div>
-            <div class="nav-links">
-                <a href="#about" class="nav-link">01. About</a>
-                <a href="#experience" class="nav-link">02. Experience</a>
-                <a href="#projects" class="nav-link">03. Projects</a>
-                <a href="#skills" class="nav-link">04. Skills</a>
-                <a href="#contact" class="nav-link">05. Contact</a>
-            </div>
-            <div class="nav-contact">
-                <a href="mailto:prtk962510@gmail.com" class="btn btn--outline btn--sm">Get In Touch</a>
-            </div>
-            <div class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-greeting">Hello, my name is</h1>
-                <h2 class="hero-name">Prateek Nikhil Pethe</h2>
-                <h3 class="hero-tagline">I transform data into strategic business insights</h3>
-                <p class="hero-description">
-                    I'm a Market Research Analyst with ~3.5 years of experience at Evalueserve, specializing in competitive intelligence, 
-                    market analysis, and strategic business insights. I help businesses make data-driven decisions through comprehensive 
-                    market research and advanced analytics.
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Prateek Nikhil Pethe" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Prateek Nikhil Pethe">Prateek Nikhil Pethe</h1>
+
+          <p class="title">Data Analyst</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:prtk962510@gmail.com" class="contact-link">prtk962510@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-github"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">GitHub</p>
+
+              <a href="https://github.com/PrateekPethe" class="contact-link" target="_blank">github.com/PrateekPethe</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">LinkedIn</p>
+
+              <a href="https://linkedin.com/in/pnpethe" class="contact-link" target="_blank">linkedin.com/in/pnpethe</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Gurgaon, India</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="#" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+  <p>
+    I'm a Data Analyst based in Gurgaon, India, with ~3.5 years of experience turning complex, raw data into actionable business strategies. My journey began with a B.Tech in Computer Science, giving me a strong analytical foundation, which I further enhanced with an MBA in Business Analytics.
+  </p>
+  <p>
+    My expertise lies in data visualization, predictive modeling, and strategic market mapping. I design interactive Power BI dashboards, extract and transform large datasets using Python and SQL, and build data-driven Go-To-Market strategies that directly impact business growth.
+  </p>
+</section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+  <li class="service-item">
+    <div class="service-icon-box">
+      <img src="./assets/images/icon-dev.svg" alt="data icon" width="40">
+    </div>
+    <div class="service-content-box">
+      <h4 class="h4 service-item-title">Data Analysis & Visualization</h4>
+      <p class="service-item-text">
+        Building interactive dashboards using Power BI and creating compelling visual stories from complex datasets.
+      </p>
+    </div>
+  </li>
+  <li class="service-item">
+    <div class="service-icon-box">
+      <img src="./assets/images/icon-design.svg" alt="analytics icon" width="40">
+    </div>
+    <div class="service-content-box">
+      <h4 class="h4 service-item-title">Predictive Modeling</h4>
+      <p class="service-item-text">
+        Utilizing Python and machine learning algorithms to forecast trends and optimize business strategies.
+      </p>
+    </div>
+  </li>
+  <li class="service-item">
+    <div class="service-icon-box">
+      <img src="./assets/images/icon-app.svg" alt="database icon" width="40">
+    </div>
+    <div class="service-content-box">
+      <h4 class="h4 service-item-title">Database Management</h4>
+      <p class="service-item-text">
+        Writing complex SQL queries for data extraction, transformation, and maintaining robust data pipelines.
+      </p>
+    </div>
+  </li>
+  <li class="service-item">
+    <div class="service-icon-box">
+      <img src="./assets/images/icon-photo.svg" alt="market icon" width="40">
+    </div>
+    <div class="service-content-box">
+      <h4 class="h4 service-item-title">Market Intelligence</h4>
+      <p class="service-item-text">
+        Conducting competitive landscape analysis and delivering data-driven Go-To-Market strategies.
+      </p>
+    </div>
+  </li>
+</ul>
+
+        </section>
+
+
+        <!--
+          - testimonials
+        -->
+
+        
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+
+              <time datetime="2021-06-14">14 June, 2021</time>
+
+              <div data-modal-text>
+                <p>
+                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  lot of experience
+                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                  consectetur adipiscing
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
                 </p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn--primary btn--lg">View My Work</a>
-                    <a href="mailto:prtk962510@gmail.com" class="btn btn--outline btn--lg">Get In Touch</a>
-                </div>
+              </div>
+
             </div>
+
+          </section>
+
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">01.</span>
-                <h2 class="section-title">About Me</h2>
+
+        <!--
+          - clients
+        -->
+
+        
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>
-                        Currently in <strong>Gurgaon, India</strong>, I'm a passionate Data Analyst who thrives on 
-                        turning complex data into actionable business strategies. My journey began with a B.Tech in Computer Science, 
-                        which gave me a strong analytical foundation, and was further enhanced by an MBA in Business Analytics.
-                    </p>
-                    <p>
-                        Currently at <strong>Evalueserve</strong>, I've had the opportunity to work across diverse industries, 
-                        conducting competitive intelligence, market mapping, and strategic analysis. My work spans from 
-                        market intelligence to go-to-market strategies, always with a focus on delivering insights 
-                        that drive business growth.
-                    </p>
-                    <p>Here are some areas where I focus my expertise:</p>
-                    <ul class="skills-list">
-                        <li><span class="arrow">▹</span>Competitive Intelligence & Market Mapping</li>
-                        <li><span class="arrow">▹</span>Strategic Business Analysis & SWOT/PESTLE</li>
-                        <li><span class="arrow">▹</span>Data Analysis and Visualization with Power BI</li>
-                        <li><span class="arrow">▹</span>Primary & Secondary Market Research</li>
-                        <li><span class="arrow">▹</span>Go-to-Market Strategy Development</li>
-                        <li><span class="arrow">▹</span>Technology Trends & Industry Analysis</li>
-                    </ul>
-                </div>
-                <div class="about-education">
-                    <h3>Education</h3>
-                    <div class="education-item">
-                        <div class="education-degree">Masters in Business Administration (MBA)</div>
-                        <div class="education-minor">Major: Business Analytics</div>
-                        <div class="education-school">Balaji Institute of Management and Human Resource Development</div>
-                        <div class="education-location">Pune, Maharashtra • 2022 • 72.0%</div>
-                    </div>
-                    <div class="education-item">
-                        <div class="education-degree">Bachelors of Technology (B.Tech)</div>
-                        <div class="education-minor">Major: Computer Science</div>
-                        <div class="education-school">Sikkim Manipal Institute of Technology</div>
-                        <div class="education-location">Sikkim • 2020 • 6.71 GPA</div>
-                    </div>
-                </div>
+
+            <h3 class="h3">Education</h3>
+  </div>
+  <ol class="timeline-list">
+    <li class="timeline-item">
+      <h4 class="h4 timeline-item-title">MBA in Business Analytics</h4>
+      <span>Balaji Institute of Management & HRD • 2022</span>
+      <p class="timeline-text">Focus on predictive modeling, business intelligence, and data-driven decision making. Graduated with 72.0%.</p>
+    </li>
+    <li class="timeline-item">
+      <h4 class="h4 timeline-item-title">B.Tech in Computer Science</h4>
+      <span>Sikkim Manipal Institute of Technology • 2020</span>
+      <p class="timeline-text">Core foundation in programming, algorithms, and database management. Graduated with 6.71 GPA.</p>
+    </li>
+  </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
             </div>
+
+            <h3 class="h3">Experience</h3>
+  </div>
+  <ol class="timeline-list">
+    <li class="timeline-item">
+      <h4 class="h4 timeline-item-title">Analyst @ Evalueserve</h4>
+      <span>March 2022 — Present | Gurgaon, India</span>
+      <p class="timeline-text">
+        • Developed interactive Power BI dashboards for client presentations, translating complex data into visual insights.<br>
+        • Extracted and processed large datasets using Python and SQL to support predictive modeling and trend analysis.<br>
+        • Designed data-driven Go-To-Market strategies identifying key industries, adoption drivers, and regional pricing insights.<br>
+        • Conducted comprehensive market research using advanced analytics tools like SEMrush and SimilarWeb.
+      </p>
+    </li>
+  </ol>
+
+        </section>
+
+        <section class="skill">
+  <h3 class="h3 skills-title">Technical Skills</h3>
+  <ul class="skills-list content-card">
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Python (Pandas, NumPy, Scikit-learn)</h5>
+        <data value="90">90%</data>
+      </div>
+      <div class="skill-progress-bg">
+        <div class="skill-progress-fill" style="width: 90%;"></div>
+      </div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">SQL & Database Management</h5>
+        <data value="85">85%</data>
+      </div>
+      <div class="skill-progress-bg">
+        <div class="skill-progress-fill" style="width: 85%;"></div>
+      </div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Power BI & Data Visualization</h5>
+        <data value="95">95%</data>
+      </div>
+      <div class="skill-progress-bg">
+        <div class="skill-progress-fill" style="width: 95%;"></div>
+      </div>
+    </li>
+    <li class="skills-item">
+      <div class="title-wrapper">
+        <h5 class="h5">Advanced Excel</h5>
+        <data value="90">90%</data>
+      </div>
+      <div class="skill-progress-bg">
+        <div class="skill-progress-fill" style="width: 90%;"></div>
+      </div>
+    </li>
+  </ul>
+</section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Data Visualization</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Machine Learning</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Analytics</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Data Visualization</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Machine Learning</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Analytics</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+  <li class="project-item active" data-filter-item data-category="machine learning">
+    <a href="#">
+      <figure class="project-img">
+        <div class="project-item-icon-box">
+          <ion-icon name="eye-outline"></ion-icon>
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="section section--gray" id="experience">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">02.</span>
-                <h2 class="section-title">Professional Experience</h2>
-            </div>
-            <div class="experience-content">
-                <div class="experience-item">
-                    <div class="experience-header">
-                        <div class="experience-title">
-                            <h3>Analyst</h3>
-                            <span class="experience-company">@ Evalueserve</span>
-                        </div>
-                        <div class="experience-duration">March 2022 - Present</div>
-                    </div>
-                    <div class="experience-location">Gurgaon, India</div>
-                    <div class="experience-description">
-                        <ul>
-                            <li><span class="arrow">▹</span>Led competitive landscape analysis across multiple regions including India, South Korea, and EMEA markets</li>
-                            <li><span class="arrow">▹</span>Conducted comprehensive market research using advanced tools like SEMrush and SimilarWeb for web analytics and competitor tracking</li>
-                            <li><span class="arrow">▹</span>Developed interactive Power BI dashboards for client presentations, translating complex data into visual insights</li>
-                            <li><span class="arrow">▹</span>Designed data-driven Go-To-Market strategies, identifying key industries, adoption drivers, and regional pricing insights</li>
-                            <li><span class="arrow">▹</span>Created comprehensive cybersecurity intelligence profiles, mapping attack surfaces and defensive strategies for technology clients</li>
-                            <li><span class="arrow">▹</span>Specialized in AI image generation market analysis, evaluating pricing models and market entry tactics</li>
-                            <li><span class="arrow">▹</span>Delivered actionable business insights through primary and secondary research methodologies</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <img src="./assets/images/project-1.jpg" alt="Fraud Detection" loading="lazy">
+      </figure>
+      <h3 class="project-title">Online Payment Fraud Detection</h3>
+      <p class="project-category">Machine Learning</p>
+    </a>
+  </li>
+  <li class="project-item active" data-filter-item data-category="data visualization">
+    <a href="#">
+      <figure class="project-img">
+        <div class="project-item-icon-box">
+          <ion-icon name="eye-outline"></ion-icon>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">03.</span>
-                <h2 class="section-title">Key Projects & Analysis</h2>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Competitor Intelligence & Market Insights</h3>
-                        <div class="project-tools">
-                            <span class="tool-tag">SEMrush</span>
-                            <span class="tool-tag">SimilarWeb</span>
-                            <span class="tool-tag">Market Research</span>
-                            <span class="tool-tag">Competitive Analysis</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Conducted competitive landscape analysis across India and South Korea, evaluating product offerings, 
-                        pricing, and GTM strategies. Delivered comprehensive market research and web analytics using SEMrush 
-                        and SimilarWeb to track competitor performance in EMEA markets.
-                    </p>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Competitor Landscape Mapping</h3>
-                        <div class="project-tools">
-                            <span class="tool-tag">Power BI</span>
-                            <span class="tool-tag">Market Research</span>
-                            <span class="tool-tag">Data Visualization</span>
-                            <span class="tool-tag">Industry Analysis</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Conducted in-depth research on the graphics design and photo editing industry to identify key players, 
-                        market trends, and growth opportunities. Developed interactive Power BI dashboards for client presentations, 
-                        showcasing critical findings and strategic insights.
-                    </p>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Go-to-Market Strategy & Pricing</h3>
-                        <div class="project-tools">
-                            <span class="tool-tag">Strategic Analysis</span>
-                            <span class="tool-tag">Pricing Research</span>
-                            <span class="tool-tag">Primary Research</span>
-                            <span class="tool-tag">Market Entry</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Supported in designing comprehensive data-driven Go-To Market strategy, identifying key industries, 
-                        adoption drivers, and regional pricing insights. Built competitor intelligence on AI image generation, 
-                        analyzing pricing models and market entry tactics.
-                    </p>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Cybersecurity Intelligence Profiles</h3>
-                        <div class="project-tools">
-                            <span class="tool-tag">Intelligence Analysis</span>
-                            <span class="tool-tag">Risk Assessment</span>
-                            <span class="tool-tag">Strategic Mapping</span>
-                            <span class="tool-tag">Security Research</span>
-                        </div>
-                    </div>
-                    <p class="project-description">
-                        Developed comprehensive cybersecurity intelligence profiles, mapping attack surfaces, incident history, 
-                        and defensive strategies for clients in the technology sector. Delivered strategic insights for 
-                        risk mitigation and security planning.
-                    </p>
-                </div>
-            </div>
+        <img src="./assets/images/project-2.png" alt="Sales Dashboard" loading="lazy">
+      </figure>
+      <h3 class="project-title">Competitor Landscape Mapping</h3>
+      <p class="project-category">Data Visualization (Power BI)</p>
+    </a>
+  </li>
+  <li class="project-item active" data-filter-item data-category="analytics">
+    <a href="#">
+      <figure class="project-img">
+        <div class="project-item-icon-box">
+          <ion-icon name="eye-outline"></ion-icon>
         </div>
-    </section>
+        <img src="./assets/images/project-3.jpg" alt="Pricing Strategy" loading="lazy">
+      </figure>
+      <h3 class="project-title">Go-to-Market Analytics Strategy</h3>
+      <p class="project-category">Analytics</p>
+    </a>
+  </li>
+</ul>
 
-    <!-- Skills Section -->
-    <section class="section section--gray" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">04.</span>
-                <h2 class="section-title">Skills & Expertise</h2>
-            </div>
-            <div class="skills-content">
-                <div class="skills-category">
-                    <h3>Technical Skills</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Microsoft Suite</span>
-                        <span class="skill-tag">Advanced Excel</span>
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">SemRush / SimilarWeb (SEO Analytics)</span>
-                        <span class="skill-tag">Data.ai (App analytics)</span>
-                        <span class="skill-tag">SQL</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Research & Analysis</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Primary Market Research</span>
-                        <span class="skill-tag">Secondary Market Research</span>
-                        <span class="skill-tag">Market Analysis</span>
-                        <span class="skill-tag">Competitive Analysis</span>
-                        <span class="skill-tag">SWOT Analysis</span>
-                        <span class="skill-tag">PESTLE Analysis</span>
-                    </div>
-                </div>
-                <div class="skills-category">
-                    <h3>Core Competencies</h3>
-                    <div class="skills-tags">
-                        <span class="skill-tag">Problem Solving</span>
-                        <span class="skill-tag">Attention to Detail</span>
-                        <span class="skill-tag">Strategic Analysis</span>
-                        <span class="skill-tag">Data Visualization</span>
-                        <span class="skill-tag">Industry Research</span>
-                        <span class="skill-tag">Technology Trends</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">05.</span>
-                <h2 class="section-title">Get In Touch</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-text">
-                    <p>
-                        I'm always interested in new opportunities and exciting projects in Data Analytics, Market Research and Business Analytics 
-                        Whether you're looking for competitive intelligence, market analysis, or strategic insights, I'd love to hear from you
-                    </p>
-                </div>
-                <div class="contact-info">
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <h4>Email</h4>
-                            <a href="mailto:prtk962510@gmail.com">prtk962510@gmail.com</a>
-                        </div>
-                        <div class="contact-method">
-                            <h4>Github</h4>
-                            <a href="https://github.com/PrateekPethe">Drop In</a>
-                        </div>
-                        <div class="contact-method">
-                            <h4>LinkedIn</h4>
-                            <a href="https://linkedin.com/in/pnpethe" target="_blank">Check it Out</a>
-                        </div>
-                        <div class="contact-method">
-                            <h4>Location</h4>
-                            <span>Gurgaon, India</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-cta">
-                    <a href="mailto:prtk962510@gmail.com" class="btn btn--primary btn--lg">
-                        Say Hello
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+      </article>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Prateek Nikhil Pethe. All rights reserved.</p>
-                <p>Built with passion for data-driven insights.</p>
-            </div>
-        </div>
-    </footer>
 
-    <script src="app.js"></script>
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="blog" data-page="blog">
+
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+
+                  <p class="blog-text">
+                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
+
+                  <p class="blog-text">
+                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #80</h3>
+
+                  <p class="blog-text">
+                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
+
+                  <p class="blog-text">
+                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
+
+                  <p class="blog-text">
+                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="blog-post-item">
+              <a href="#">
+
+                <figure class="blog-banner-box">
+                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
+                </figure>
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Design</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Fab 23, 2022</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">Design digest #79</h3>
+
+                  <p class="blog-text">
+                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>
